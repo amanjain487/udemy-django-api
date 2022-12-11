@@ -20,19 +20,16 @@ mkdir -p $PROJECT_BASE_PATH
 git clone $PROJECT_GIT_URL $PROJECT_BASE_PATH/udemy-django-api
 
 mkdir -p $VIRTUALENV_BASE_PATH
-echo "Done till here0"
 
 python3 -m venv $VIRTUALENV_BASE_PATH/profiles_api_venv
-echo "Done till here1"
 
 $VIRTUALENV_BASE_PATH/profiles_api_venv/bin/pip install -r $PROJECT_BASE_PATH/udemy-django-api/requirements.txt
-echo "Done till here2"
 
 # Run migrations
 cd $PROJECT_BASE_PATH/udemy-django-api/
 pwd
-echo "Done till here3"
 python manage.py migrate
+echo "migrate done"
 python manage.py collectstatic --noinput
 
 # Setup Supervisor to run our uwsgi process.
