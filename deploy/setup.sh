@@ -26,8 +26,8 @@ $VIRTUALENV_BASE_PATH/profiles_api_venv/bin/pip install -r $PROJECT_BASE_PATH/ud
 
 # Run migrations
 cd $PROJECT_BASE_PATH/udemy-django-api/
-$PROJECT_BASE_PATH/udemy-django-api/python manage.py migrate
-$PROJECT_BASE_PATH/udemy-django-api/python manage.py collectstatic --noinput
+python manage.py migrate
+python manage.py collectstatic --noinput
 
 # Setup Supervisor to run our uwsgi process.
 cp $PROJECT_BASE_PATH/udemy-django-api/deploy/supervisor_profiles_api.conf /etc/supervisor/conf.d/profiles_api.conf
