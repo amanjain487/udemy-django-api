@@ -20,6 +20,8 @@ mkdir -p $PROJECT_BASE_PATH
 git clone $PROJECT_GIT_URL $PROJECT_BASE_PATH/udemy-django-api
 
 mkdir -p $VIRTUALENV_BASE_PATH
+echo "Done till here0"
+
 python3 -m venv $VIRTUALENV_BASE_PATH/profiles_api_venv
 echo "Done till here1"
 
