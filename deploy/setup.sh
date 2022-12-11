@@ -38,7 +38,7 @@ cp /usr/local/apps/udemy-django-api/deploy/supervisor_profiles_api.conf /etc/sup
 supervisorctl reread
 supervisorctl update
 supervisorctl restart profiles_api
-
+echo "DONE! :)"
 # Setup nginx to make our application accessible.
 cp /usr/local/apps/udemy-django-api/deploy/nginx_profiles_api.conf /etc/nginx/sites-available/profiles_api.conf
 rm /etc/nginx/sites-enabled/default
