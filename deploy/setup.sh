@@ -26,7 +26,8 @@ $VIRTUALENV_BASE_PATH/profiles_api_venv/bin/pip install -r $PROJECT_BASE_PATH/ud
 
 # Run migrations
 cd $PROJECT_BASE_PATH/udemy-django-api/
-echo pwd
+pwd
+echo "Done till here"
 python manage.py migrate
 python manage.py collectstatic --noinput
 
