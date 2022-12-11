@@ -33,12 +33,15 @@ python3 manage.py migrate
 echo "migrate done"
 python3 manage.py collectstatic --noinput
 
+deactivate
+
 # Setup Supervisor to run our uwsgi process.
 cp /usr/local/apps/udemy-django-api/deploy/supervisor_profiles_api.conf /etc/supervisor/conf.d/profiles_api.conf
 supervisorctl reread
 supervisorctl update
 supervisorctl restart profiles_api
 echo "DONE! :)"
+
 # Setup nginx to make our application accessible.
 cp /usr/local/apps/udemy-django-api/deploy/nginx_profiles_api.conf /etc/nginx/sites-available/profiles_api.conf
 rm /etc/nginx/sites-enabled/default
