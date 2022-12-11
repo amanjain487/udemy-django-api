@@ -22,7 +22,6 @@ git clone $PROJECT_GIT_URL /usr/local/apps/udemy-django-api
 mkdir -p /usr/local/virtualenvs
 
 python3 -m venv /usr/local/virtualenvs/profiles_api_venv
-source /usr/local/virtualenvs/profiles_api_venv/bin/activate
 /usr/local/virtualenvs/profiles_api_venv/bin/pip install -r /usr/local/apps/udemy-django-api/requirements.txt
 
 # Run migrations
@@ -33,7 +32,7 @@ python3 manage.py migrate
 echo "migrate done"
 python3 manage.py collectstatic --noinput
 
-deactivate
+
 
 # Setup Supervisor to run our uwsgi process.
 cp /usr/local/apps/udemy-django-api/deploy/supervisor_profiles_api.conf /etc/supervisor/conf.d/profiles_api.conf
